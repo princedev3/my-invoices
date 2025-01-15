@@ -10,3 +10,5 @@ export const authRoutes = [
 export const privateRoutes = ["/invoices", "/invoices/:id"];
 
 export const adminRoutes = ["/dashboard"];
+
+export const apiAuthPrefix = "/api";

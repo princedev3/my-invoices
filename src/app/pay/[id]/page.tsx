@@ -16,7 +16,7 @@ const Payment = () => {
     const makeRequest = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_SITE_URL}/api/create-intent/${id}`,
+          `${process.env.NEXT_PUBLIC_SITE_URL}/api/create-intent?id=${id}`,
           {
             method: "POST",
             headers: {

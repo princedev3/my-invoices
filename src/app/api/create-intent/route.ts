@@ -1,15 +1,16 @@
 import prisma from "@/lib/prisma";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export const POST = async (
-  req: Request,
-  { params }: { params: { id: string } }
-) => {
-  const { id } = params;
-
+export const POST = async (req: NextRequest) => {
   try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json({ message: "id not found" }, { status: 400 });
+    }
     const findTicket = await prisma.ticket.findUnique({
       where: {
         id: id,

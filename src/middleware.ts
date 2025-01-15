@@ -1,7 +1,13 @@
 import NextAuth from "next-auth";
 import authConfig from "./auth.config";
 import { NextResponse } from "next/server";
-import { publicRoutes, authRoutes, adminRoutes, privateRoutes } from "./route";
+import {
+  publicRoutes,
+  authRoutes,
+  adminRoutes,
+  privateRoutes,
+  apiAuthPrefix,
+} from "./route";
 import prisma from "./lib/prisma";
 const { auth: middleware } = NextAuth(authConfig);
 
@@ -16,7 +22,7 @@ export default middleware(async (req) => {
     // const user = await prisma.user.findUnique({
     //   where: { email: email as string },
     // });
-
+    const isApiRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
     const isAuthRoute = authRoutes.includes(nextUrl.pathname);
     const isPrivateRoute = (path: string): boolean => {
@@ -28,6 +34,7 @@ export default middleware(async (req) => {
         return route === path;
       });
     };
+    if (isApiRoute) return;
 
     // const isAdminRoute = adminRoutes.includes(nextUrl.pathname);
 

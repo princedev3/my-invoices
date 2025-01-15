@@ -1,17 +1,18 @@
-import { Badge } from "@/components/ui/badge";
-import React, { FC } from "react";
-import { Ticket } from "@prisma/client";
+import React from "react";
 
 import SingleInvoiceData from "@/components/single-invoice";
 import { getSingleInvoice } from "@/actions/get-single-invoice";
 
-type TicketProps = Ticket & {
-  id: string | null;
-  name: string;
-};
+interface Params {
+  id: string;
+}
 
-const SingleInvoice = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+interface PageProps {
+  params: Promise<Params>;
+}
+const SingleInvoice = async ({ params }: PageProps) => {
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
 
   if (!id) {
     return <p>Invalid Invoice ID</p>;
