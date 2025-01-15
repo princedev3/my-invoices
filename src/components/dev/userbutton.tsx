@@ -67,7 +67,7 @@ export const UserButton = () => {
   return (
     <Button size={"lg"} asChild className="!bg-blue-950">
       <Link href={pathname?.endsWith("/login") ? "/register" : "/login"}>
-        {pathname?.endsWith("/login") ? "register" : "Log In"}
+        {pathname?.endsWith("/login") ? "Register" : "Log In"}
       </Link>
     </Button>
   );

@@ -24,14 +24,14 @@ export const createInvoiceAction = async (values: {
       data: {
         title,
         name,
-        email,
+        email: email.toLocaleLowerCase(),
         status,
         desc,
         value,
         createdby: session?.user?.id as string,
       },
     });
-    console.log("Invoice created successfully");
+
     return { success: "Invoice created successfully" };
   } catch (error) {
     console.log(error);

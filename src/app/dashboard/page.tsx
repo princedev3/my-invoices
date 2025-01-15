@@ -13,6 +13,7 @@ import Dashboardcomponent from "@/components/dashboardcomponent";
 
 const DashboardPage = async () => {
   const dashboardListData = await getDashboardData();
+
   return (
     <div className="mt-10 grid gap-y-6 ">
       <div className="grid grid-flow-col">
