@@ -29,14 +29,16 @@ const DashboardPage = async () => {
                 Date
               </TableHead>
               <TableHead className="text-lg text-gray-500">Name</TableHead>
-              <TableHead className="text-lg text-gray-500">Email</TableHead>
+              <TableHead className="text-lg hidden sm:block text-gray-500">
+                Email
+              </TableHead>
               <TableHead className="text-left text-lg text-gray-500">
                 Status
               </TableHead>
               <TableHead className="text-left text-lg text-gray-500">
                 Value
               </TableHead>
-              <TableHead className="text-left text-lg text-gray-500">
+              <TableHead className="text-left text-lg text-gray-500 hidden sm:block">
                 created by
               </TableHead>
             </TableRow>

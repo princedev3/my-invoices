@@ -33,6 +33,11 @@ export const columns: ColumnDef<InvoiceType>[] = [
   {
     accessorKey: "email",
     header: "Email",
+    cell: ({ row }) => (
+      <p style={{ fontSize: "14px" }} className=" ">
+        {row.original.email}{" "}
+      </p>
+    ),
   },
   {
     accessorKey: "paid",

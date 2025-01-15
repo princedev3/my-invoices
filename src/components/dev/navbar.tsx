@@ -12,7 +12,7 @@ const Navbar = () => {
   const session = useSessionStore((state) => state.session);
 
   return (
-    <div className="border-b border-zinc-100 ">
+    <div className="border-b border-zinc-100 p-2 md:p-0">
       <div className="w-full max-w-4xl mx-auto grid grid-flow-col items-center  h-[60px]">
         <Link href={"/"} className="cursor-pointer w-fit">
           <Logo size={50} color="#172554" />
