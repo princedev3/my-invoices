@@ -39,7 +39,7 @@ const DashboardPage = async () => {
               <TableHead className="text-left text-lg text-gray-500">
                 Value
               </TableHead>
-              <TableHead className="text-left text-lg text-gray-500 hidden sm:block">
+              <TableHead className="text-left text-lg text-gray-500 hidden md:block">
                 created by
               </TableHead>
             </TableRow>

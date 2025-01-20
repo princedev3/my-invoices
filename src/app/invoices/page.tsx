@@ -4,7 +4,7 @@ import React from "react";
 
 const InvoicePage = async () => {
   const invoices = await getCustomerInvoices();
-  console.log(invoices);
+
   return <CustomerInvoices invoices={invoices} />;
 };
 

@@ -37,7 +37,7 @@ const Dashboardcomponent = ({ item }: { item: DashboardcomponentProps }) => {
           {item.name}
         </Link>
       </TableCell>
-      <TableCell className="font-medium hidden sm:block">
+      <TableCell className="font-medium   hidden sm:table-cell   h-full">
         <Link href={`/invoices/${item.id}`} className="block w-full h-full">
           {item.email}
         </Link>
@@ -56,7 +56,7 @@ const Dashboardcomponent = ({ item }: { item: DashboardcomponentProps }) => {
           {item.value.toFixed(2)}
         </Link>
       </TableCell>
-      <TableCell className="font-medium text-left hidden sm:block">
+      <TableCell className="font-medium text-left hidden md:table-cell">
         <Link href={`/invoices/${item.id}`} className="block w-full h-full">
           {item.createdByName}
         </Link>
